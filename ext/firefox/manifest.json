@@ -1,0 +1,18 @@
+{
+  "manifest_version": 3,
+  "name": "Random Email Generator",
+  "description": "Email generator extension",
+  "permissions": ["storage"],
+  "version": "0.1",
+  "options_ui": {
+    "page": "options.html",
+    "open_in_tab": true
+  },
+  "background": {
+    "scripts": ["service-worker.js"]
+  },
+  "action": {
+    "default_title": "Create random email",
+    "default_popup": "popup.html"
+  }
+}

@@ -1,0 +1,52 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/water.css@2/out/water.css">
+    <style>
+      #email-address:empty::after {
+        content: "Enter an ID...";
+        font-style: italic;
+      }
+      .flex-row {
+        display: flex;
+        align-items: center;
+      }
+      #email-label {
+        width: 100%;
+      }
+      button {
+        padding: 10px 15px;
+      }
+    </style>
+  </head>
+  <body>
+    <h3>Generate an Email:</h3>
+
+    <section id="form-section">
+      <label for="email-id">ID:</label>
+      <div class="flex-row">
+        <input id="email-id" placeholder="foobar" type="text" required />
+
+        <button type="button" id="btn-random-id">Random</button>
+
+      </div>
+
+      <label for="email-label">Label (optional):</label>
+      <input id="email-label" placeholder="me" />
+
+      <p>Generated email address:</p>
+      <pre id="email-address"></pre>
+    </section>
+
+    <section id="warning-section" hidden>
+      <p>Please set the domain and recipient ID on the options page:</p>
+    </section>
+
+    <button type="button" id="btn-copy">Copy Email</button>
+
+    <button type="button" id="btn-options">Options</button>
+    
+    <script src="popup.js" type="module"></script>
+  </body>
+</html>

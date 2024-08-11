@@ -1,0 +1,23 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>Random Email Generator Settings</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/water.css@2/out/water.css">
+  </head>
+  <body>
+    <h2>Settings - Random Email Generator:</h2>
+
+    <form>
+      <label for="domain">Domain:</label>
+      <input id="domain" placeholder="example.com" type="text" required />
+
+      <label for="recipient-id">Recipient ID:</label>
+      <input id="recipient-id" placeholder="0" type="number" min="0" step="1" required />
+
+      <button type="submit">Save</button>
+    </form>
+    
+    <script src="options.js" type="module"></script>
+  </body>
+</html>
