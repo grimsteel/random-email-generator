@@ -39,6 +39,7 @@ function updateEmail() {
 const { domain, recipientId } = await chrome.storage.local.get(["domain", "recipientId"]);
 if (domain && recipientId !== undefined) {
   formSection.addEventListener("input", () => updateEmail());
+  inputId.focus();
 } else {
   formSection.hidden = true;
   warningSection.hidden = false;

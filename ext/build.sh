@@ -1,9 +1,20 @@
+# list non ignored files/dirs in directory $1
+list_files() {
+  pushd $1 > /dev/null
+  # oc == others and cached
+  # exclude-standard == exclude ignored files
+  # sed/uniq to get directories
+  # https://stackoverflow.com/a/10456380
+  git ls-files --exclude-standard -oc . | sed s,/.*,/, | uniq | sed "s,^,$1/,"
+  popd > /dev/null
+}
+
 # combine files for the $1 build (chrome/firefox)
 build() {
   rm -rf "./build/$1"
   mkdir -p "./build/$1"
 
-  cp -r $(git ls-files --others --exclude-standard :\(glob\)$1/\* :\(glob\)common/\*) "./build/$1/"
+  cp -r $(list_files $1) $(list_files common) "./build/$1/"
 
   echo "Built $1 (./build/$1)"
 }
